@@ -8,9 +8,15 @@ app = Flask(__name__)
 
 
 @app.route("/")
+def index():
+    """root"""
+    return "This is the index page"
+
+
+@app.route("/hello")
 def hello_world():
     """
-    Minimal sample. Response to /
+    Minimal sample. Response to /hello
     With optional ?name
     """
     name = request.args.get("name", "Flask")
